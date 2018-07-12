@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=medium-dpi" />
+
+	<link rel="stylesheet"  href="libs/jQM-flat/jquery.mobile.flatui.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+	<script type="text/javascript" src="libs/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="libs/jQueryMobile/jquery.mobile-1.3.2.min.js"></script>
+
+	<script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+	<script type="text/javascript" charset="utf-8">
+    // Call onDeviceReady when PhoneGap is loaded.
+    //
+    // At this point, the document has loaded but phonegap-1.0.0.js has not.
+    // When PhoneGap is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    // 
+    document.addEventListener("deviceready", onDeviceReady, false);
+    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    //
+    function onDeviceReady() {
+        // Now safe to use the PhoneGap API
+		document.getElementById("app").style.display = "initial";
+    }
+    </script>
+
+	<title>Pneumatik</title>
+</head>
+<body>
+	<audio autoplay loop>
+	   <source src="sound/backsound.mp3" type="audio/mpeg" />
+	</audio>
+    <div id="app" style="display:initial;">
+		<!--<div id="dudu-pembuka" data-role="page" style="background-image:url('img/Icon%20Materi/DEPAN.png'); background-repeat:no-repeat;background-size:100% 100%">
+      		<script type="text/JavaScript">
+      			setTimeout("location.href = '#Welcome-page';",5000);
+      		</script>
+      	</div><!-- end Page--> 
+		
+		<!-- Welcome Page -->
+		<div id="Welcome-page" data-role="page" class="bg-welcome" style="text-align: center;"> 
+				<img src="img/uny.png"  style="width: 150px; display:block; margin: 20px auto;"/>
+				<h3>Selamat Datang</h3>
+				<h1>Di Media Pembelajaran</h1>
+				<h2>PNEUMATIK</h2>
+				<br/>
+					<!--<a data-theme="b" href="#" onclick="VideoPlayer.play('file:///android_asset/www/vid/apersepsi.mp4')" data-role="button" data-icon="flat-video">Lihat Video</a>-->
+				<center><a href="#home-page" data-theme="d"  data-role="button" data-inline="true" data-icon="arrow-r">Masuk</a></center>
+		</div>
+				    
+        <!-- Home Page -->
+		<div id="home-page" data-role="page">
+			<img src="img/Icon%20Materi/header.jpg" style="width:100%">
+            <div data-role="content" >
+				<div id="menu">
+					<ul data-role="listview">
+						<!--<li class="btn-menu-utama">
+							<a href="#silabus-page"  >
+								<img src="img/Icon%20Materi/1%20Silabus%20(1).png" alt="">
+								<h2><b>KOMPETENSI</b></h2>
+							</a>
+						</li>-->
+						<li class="btn-menu-utama">
+							<a href="#Materi-page"  >
+								<img src="img/Icon%20Materi/3%20Materi.png" alt="">
+								<h2><b>MATERI</b></h2>
+							</a>
+						</li>
+						<!--<li class="btn-menu-utama">
+							<a href="#evaluasi-page" onmousedown="resetSoal()">
+								<img src="img/Icon%20Materi/2%20kuis.png" alt="">
+								<h2><b>EVALUASI</b></h2>
+							</a>
+						</li>-->		
+						<li class="btn-menu-utama">
+							<a href="#about-page"  >
+								<img src="img/Icon%20Materi/4%20profil.png"  alt="">
+								<h2><b>PROFIL</b></h2>
+							</a>
+						</li>
+						<li class="btn-menu-utama">
+							<a href="#help-page"  >
+								<img src="img/Icon%20Materi/5%20help.png" alt="">
+								<h2><b>BANTUAN</b></h2>
+							</a>
+						</li>
+						<li class="btn-menu-merah">
+							<a href="#exit-page">
+								<img src="img/Icon%20Materi/6%20exit.png" alt="">
+								<h2><b>EXIT</b></h2>
+							</a>
+						</li>
+					</ul>			
+                </div>
+            </div>
+        </div><!-- /page  -->
+		
+		<div  id="exit-page" data-role="page" style="background-image: url('img/Icon%20Materi/background%20soal.jpg'); background-size: 100% 100%;background-repeat: no-repeat;">
+			<div data-role="content" align="justify" style="font-size: 16px;">
+				<!-- Isi konten di sini -->
+				<center>
+					<div style="margin:auto;">
+						<div class="ui-corner-all custom-corner" style="width:100%">
+							<div data-role="header">
+								<h3>Konfirmasi</h3>
+							</div>
+							<div data-role="content" style="background-color: rgba(255,255,255,0.7);">
+								<p style="text-align: center;"><b>Kamu yakin akan keluar dari aplikasi ini?</b></p>
+								<a href="#home-page" data-role="button" class="ui-btn-inline" data-theme="b">tidak</a>
+								<a href="#" data-role="button" class="ui-btn-inline" onclick="navigator.app.exitApp()" data-theme="d">ya</a>
+							</div>
+						</div>
+					</div>
+				</center>
+			</div>
+		</div>
+
+		<div  id="Materi-page" data-role="page">
+			<div  data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1>Materi</h1>
+			</div>
+			<img src="img/Icon%20Materi/header.jpg" style="width:100%">
+			<div data-role="content" align="center">
+				<!-- Isi konten di sini -->
+				<div id="menu" style=" font-size: 12px; vertical-align: center;">
+					<ul data-role="listview">
+						<li class="btn-menu-utama">
+							<a onmousedown="$('[data-role=collapsible]').trigger('collapse');" href="#pengantar-page"  >
+								<img src="img/Icon%20Materi/m-0.png" alt="">
+								<h2><b>Pengantar</b></h2>
+							</a>
+						</li>	
+						<li class="btn-menu-utama">											
+							<a onmousedown="$('[data-role=collapsible]').trigger('collapse');" href="#Materi-page1" >
+								<img src="img/Icon%20Materi/m-0.png" alt="">
+								<h2>Kompresor</h2>
+							</a>
+						</li>	
+						<li class="btn-menu-utama">											
+							<a onmousedown="$('[data-role=collapsible]').trigger('collapse');" href="#Materi-page2" >
+								<img src="img/Icon%20Materi/m-0.png" alt="">
+								<h2>Penerima</h2>
+							</a>
+						</li>	
+						<li class="btn-menu-utama">
+							<a  onmousedown="$('[data-role=collapsible]').trigger('collapse');" href="#Materi-page3"  >
+								<img src="img/Icon%20Materi/m-0.png" alt="">
+								<h2>Pengering</h2>
+							</a>
+						</li>	
+						<li class="btn-menu-utama">
+							<a  onmousedown="$('[data-role=collapsible]').trigger('collapse');" href="#Materi-page4"   >
+								<img src="img/Icon%20Materi/m-0.png" alt="">
+								<h2>Unit Servis</h2>
+							</a>
+						</li>
+						<li class="btn-menu-utama">
+							<a  onmousedown="$('[data-role=collapsible]').trigger('collapse');" href="#Materi-page5"   >
+								<img src="img/Icon%20Materi/m-0.png" alt="">
+								<h2>Katup Kontrol</h2>
+							</a>
+						</li>	
+						<li class="btn-menu-utama">
+							<a  onmousedown="$('[data-role=collapsible]').trigger('collapse');" href="#Materi-page6"   >
+								<img src="img/Icon%20Materi/m-0.png" alt="">
+								<h2>Aktuator</h2>
+							</a>
+						</li>																
+					</ul>                       
+				</div>
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>
+
+		<div  id="Materi-page1" data-role="page">
+			<div  data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1>Kompresor</h1>
+			</div>
+			<div data-role="content" style="font-size: 16px">
+				<!-- Isi konten di sini -->
+				Kompresor dapat dikelompokkan dalam beberapa jenis sebagai berikut:
+				<img src="img/konten/Picture2.png" style="width:100%"/>
+				<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a">
+					<h3>Kompresor torak (Piston)</h3>
+					Prinsip kerja dari kompresor torak dapat dilihat pada gambar berikut:
+					<img src="img/konten/Picture3.png" style="width: 100%"/>
+					<img src="img/konten/Picture4.gif" style="width: 100%"/>
+				</div>
+				<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a">
+					<h3>Kompresor Diapragma</h3>
+					Prinsip kerja dari kompresor diapragma dapat dilihat pada gambar berikut:
+					<img src="img/konten/Picture5.png" style="width: 100%"/>
+					<img src="img/konten/Picture6.gif" style="width: 100%"/>
+				</div>
+				<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a">
+					<h3>Kompresor Aliran Radial</h3>
+					Prinsip kerja dari kompresor aliran radial dapat dilihat pada gambar berikut:
+					<img src="img/konten/Picture7.png" style="width: 100%"/>
+					<img src="img/konten/Picture8.gif" style="width: 100%"/>
+				</div>
+				<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a">
+					<h3>Kompresor Aliran Aksial</h3>
+					Prinsip kerja dari kompresor aliran aksial dapat dilihat pada gambar berikut:
+					<img src="img/konten/Picture9.png" style="width: 100%"/>
+				</div>
+				<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a">
+					<h3>Kompresor Rotari Baling-Baling Luncur</h3>
+					Prinsip kerja dari kompresor rotari baling-baling luncur dapat dilihat pada gambar berikut:
+					<img src="img/konten/Picture10.png" style="width: 100%"/>
+					<img src="img/konten/Picture11.gif" style="width: 100%"/>
+				</div>
+				<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a">
+					<h3>Kompresor Screw</h3>
+					Prinsip kerja dari kompresor screw dapat dilihat pada gambar berikut:
+					<img src="img/konten/Picture12.png" style="width: 100%"/>
+					<img src="img/konten/Picture13.png" style="width: 100%"/>
+				</div>
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#Materi-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>
+
+		<div  id="Materi-page2" data-role="page">
+			<div  data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1>Penerima</h1>
+			</div>
+			<div data-role="content" style="font-size: 16px">
+				<!-- Isi konten di sini -->
+				Komponen penerima pada sistem pneumatik berupa tangki udara. Tangki udara ini berfungsi untuk:
+				<ul>
+					<li>Menyediakan tekanan udara yang konstan terhadap adanya konsumsi yang berfluktuasi dalam sistem pneumatik</li> 
+					<li>Sebagai persediaan dalam keadaan darurat ke dalam sistem</li>
+					<li>Sebagai pendingin udara karena luas permukaan yang besar</li>
+					<li>Memisahkan kandungan air dalam udara</li>
+				</ul>
+				<img src="img/konten/tabung.png" style="width: 100%"/>
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#Materi-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>
+
+		<div  id="Materi-page3" data-role="page">
+			<div  data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1>Pengering</h1>
+			</div>
+			<div data-role="content" style="font-size: 16px">
+				<!-- Isi konten di sini -->
+				Pengering (<i>Air Dryer</i>) mempunyai fungsi untuk:
+				<ul>
+				<li>Menghilangkan kandungan air pada udara terkompresi</li>
+				<li>Menurunkan temperatur</li>
+				</ul>
+				Gambar di bawah ini menunjukkan prinsip kerja dari <i>air dryer</i>
+				<img src="img/konten/air-dryer.png" style="width: 100%"/>
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#Materi-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>
+
+		<div  id="Materi-page4" data-role="page">
+			<div  data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1>Unit Servis</h1>
+			</div>
+			<div data-role="content" style="font-size: 16px">
+				<!-- Isi konten di sini -->
+				Blok komponen unit servis dalam sistem pneumatik berupa air service regulator. Komponen ini berfungsi untuk:
+				<ul>
+				<li>Mencegah partikel debu masuk ke dalam sistem</li>
+				<li>Memisahkan kondensasi akibat udara bertekanan</li>
+				<li>Mengatur tekanan yang dibutuhkan sistem (konstan)</li>
+				</ul>
+				Gambar di bawah ini menunjukkan bentuk dan simbol dari air service regulator.
+				<img src="img/konten/air-service-regulator.png" style="width: 100%" />
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#Materi-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>
+
+		<div  id="Materi-page5" data-role="page">
+			<div  data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1>Katup kontrol</h1>
+			</div>
+			<div data-role="content" style="font-size: 16px">
+				<!-- Isi konten di sini -->
+				<p>Katup kontrol atau katup pengarah adalah perlengkapan pneumatik yang menggunakan lubang-lubang saluran kecil yang akan dilewati oleh aliran angin, terutama untuk mulai (start) dan berhenti (stop) serta mengarahkan aliran angin tersebut.</p>
+				<p>Gambar simbol katup pengarah mempunyai ketentuan-ketentuan sebagai berikut:</p>
+				<img src="img/konten/katup-1.png" style="width: 100%; max-width: 700px"/>
+				<h4>Notasi dan Penomeran Katup</h4>
+				<p>Notasi dan penomeran pada simbol katup kontrol mengikuti ketentuan sebagai berikut:</p>
+				<table border="1" style=" border-collapse: collapse;">
+					<thead>
+						<tr>
+							<td>Jenis Saluran</td>
+							<td>Tanda</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Tenaga (pressure)</td>
+							<td>P (Pressure) atau 1</td>
+						</tr>
+						<tr>
+							<td>Keluaran (Output)</td>
+							<td>A, B, C,  atau 2, 4, 6,</td>
+						</tr>
+						<tr>
+							<td>Pembuangan (exhaust)</td>
+							<td>R, S, T,  atau 3, 5, 7,</td>
+						</tr>
+						<tr>
+							<td>Kontrol atau sinyal (pemicu)</td>
+							<td>X, Y, Z, … atau 12 ; 14 ; 16 ;</td>
+						</tr>
+					</tbody>
+				</table>
+				Berikut adalah contoh penomoran pada katup:<br/>
+				<img src="img/konten/nomor-katup.png" style="width: 100%; max-width: 100px"/>
+				<h4>Jenis-jenis katup</h4>
+				Pada tabel berikut ditunjukkan jenis-jenis katup pada sistem penumaik.<br/>
+				<img src="img/konten/jenis-katup.png" style="width: 100%; max-width: 600px"/><br/>
+				Berdasarkan cara pengoperasiannya, penggerak katup dibedakan menjadi empat yaitu manual control, mechanical control, pressure control, dan electrical control.<br/>
+				<p><strong>1. Manual Control</strong><br/>
+				Penggerak katup ini dioperasikan oleh operator secara manual. Penggerak ini mempunyai beberapa jenis yaitu:<br/>
+				<img src="img/konten/manual-control.png" style="width: 100%; max-width: 600px"/><br/>
+				Contoh:<br/>
+				<img src="img/konten/contoh-manual-control.png" style="width: 100%; max-width: 100px"/>
+				</p>
+				<p><strong>2. Mechanical Control</strong><br/>
+				Penggerak katup ini dioperasikan dengan mekanik. Penggerak ini mempunyai beberapa jenis yaitu:<br/>
+				<img src="img/konten/mechanical-control.png" style="width: 100%; max-width: 600px"/><br/>
+				Contoh:<br/>
+				<img src="img/konten/contoh-mechanical-control.png" style="width: 100%; max-width: 100px"/>
+				</p>
+				<p><strong>3. Pressure Control</strong><br/>
+				Penggerak katup ini dioperasikan dengan tekanan angin. Penggerak ini mempunyai beberapa jenis yaitu:<br/>
+				<img src="img/konten/pressure-control.png" style="width: 100%; max-width: 600px"/><br/>
+				Contoh:<br/>
+				<img src="img/konten/contoh-pressure-control.png" style="width: 100%; max-width: 300px"/>
+				</p>
+				<p><strong>4. Electrical Control</strong><br/>
+				Penggerak katup ini dioperasikan dengan listrik. Penggerak ini mempunyai beberapa jenis yaitu:<br/>
+				<img src="img/konten/electrical-control.png" style="width: 100%; max-width: 600px"/><br/>
+				Contoh:<br/>
+				<img src="img/konten/contoh-electrical-control.png" style="width: 100%; max-width: 300px"/>
+				</p>
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#Materi-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>
+
+		<div  id="Materi-page6" data-role="page">
+			<div  data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1>Aktuator</h1>
+			</div>
+			<div data-role="content" align="center">
+				<!-- Isi konten di sini -->
+				Terdapat dua jenis silinder aktuator yaitu single acting cylinder dan double acting sylinder.
+				<p>
+				<strong>Single Acting Cylinder</strong><br/>
+				</p>
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#Materi-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>
+		
+		<!-- template page -->
+		<div  id="pengantar-page" data-role="page">
+			<div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h2>Pengantar</h2>
+			</div>
+			<div data-role="content" align="justify" style="font-size: 16px;">
+				<!-- Isi konten di sini -->
+				<h3>Pengertian Pneumatik</h3>
+				<p>Istilah Pneumatik berasal dari kata “<em>Pneuma</em>” (Yunani Kuno) yang berarti tiupan atau angin. Definisi Pneumatik adalah salah satu cabang ilmu fisika yang mempelajari fenomena udara yang dimampatkan sehingga tekanan yang terjadi akan menghasilkan gaya sebagai penyebab gerak atau aktuasi pada aktuator. Sumber pembangkit pneumatik adalah udara bertekanan. Untuk menghasilkan udara bertekanan diperlukan Kompresor.</p>
+				
+				<h3>Karakteristik Positif Pneumatik</h3>
+				<ul>
+					<li>Udara dapat dimampatkan </li>
+					<li>Jumlahnya tak terbatas</li>
+					<li>Penyimpanan mudah</li>
+					<li>Tidak berbau dan berwarna</li>
+					<li>Memenuhi semua ruang dengan sama rata (Selalu mencari tekanan yang lebih rendah)</li>
+					<li>Laju aliran dapat dikontrol tekanan dan gayanya.</li>
+					<li>Transportasi mudah (penyaluran).</li>
+					<li>Aman terhadap beban lebih.</li>
+				</ul>
+				
+				<h3>Karakteristik Negatif Pneumatik</h3>
+				<ul>
+					<li>Biaya persiapannya tinggi</li>
+					<li>Suara bising (udara buang)</li>
+					<li>Mudah mengembun</li>
+					<li>Mudah terjadi kebocoran</li>
+					<li>Pada tekanan tinggi maka Temperatur juga tinggi (naik)</li>
+				</ul>
+				
+				<h3>Blok Komponen Sistem Pneumatik</h3>
+				<img src="img/konten/Picture1.png" style="width: 100%"/>
+				Blok komponen sistem pneumatik terdiri dari:
+				<ol>
+					<li>Kompresor</li>
+					<li>Penerima</li>
+					<li>Pengering</li>
+					<li>Unit Servis</li>
+					<li>Katup Kontrol</li>
+					<li>Aktuator</li>
+				</ol>
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#Materi-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>							
+						
+		<div  id="help-page" data-role="page" style="background-image:url('img/bg/bg-petunjuk.jpg'); background-repeat:no-repeat;background-size:100% 100%">
+			<div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1 style="font-size: 24px;">BANTUAN</h1>							
+			</div>
+			<div data-role="content" align="center" style="font-size: 16px;">
+				<!-- Isi konten di sini -->
+				<p>Menu bantuan ini adalah menu yang berisikan informasi untuk mengetahui fungsi tiap tombol pada media pembelajaran ini.</p>
+				<p>Berikut adalah penjelasannya:</p>
+									
+				<img src="img/help/home.PNG" width="74" height="49">
+				<p>Tombol ini terletak di pojok kiri atas, berfungsi sebagai tombol untuk kembali ke menu utama.</p>
+				<img src="img/help/back.PNG" width="66" height="32">
+				<p>tombol ini terletak di bagaian pojok kiri bawah, berfungsi untuk kembali ke menu sebelumnya.</p>
+				
+			</div>
+			<div data-role="footer" data-id="footer" id="footer" data-position="fixed" data-tap-toggle="false">
+				<a href="#home-page"  data-role="button" data-icon="arrow-l" data-inline="true" >Back</a>
+			</div>
+		</div>			
+									
+		<div  id="about-page" data-role="page" style="background: url('img/bg/bg-profil.png'); background-repeat: repeat-x repeat-y;">
+			<div data-role="header" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+				<a href="#home-page"  data-role="button" data-icon="ms-home-bt" data-inline="true" >Home</a>
+				<h1>About App</h1>
+			</div>
+			<div data-role="content" align="center" style="font-size: 16px;">
+				<!-- Isi konten di sini --> 
+				<p>Kami mengucapkan terimakasih kepada semua pihak yang telah membantu dan mendukung pengembangan media pembelajaran ini. Semoga media ini bermanfaat bagi pendidikan di sekolah baik bagi siswa, guru, lembaga pendidikan maupun untuk tujuan pengembangan.</p>
+				<p>Kami menyadari bahwa media ini masih jauh dari kesempurnaan sehingga kami membutuhkan kritik dan masukannya untuk pengembangan media selanjutnya. </p>
+			</div>
+		</div>
+    </div>
+	<script>
+		var sndClick = new Audio();
+		sndClick.src = 'sound/click2.mp3';
+		$("a").mousedown(function() {
+			sndClick.play();
+		});
+		function gotohome() {
+			location.href = "index.html#home-page";
+		}	
+	</script>
+    </body>
+</html>
